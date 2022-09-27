@@ -1,0 +1,7 @@
+{
+  "name": "Avplat_Testing",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
