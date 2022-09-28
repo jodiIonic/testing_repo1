@@ -1,0 +1,86 @@
+vars:
+  APP_ID:
+    default: 557a3710
+  BUNDLE_ID:
+    default: com.revolutionprep.kronos.local
+  CI_BUILD_NUMBER:
+    default: 1
+  CHANNEL_NAME:
+    default: Local
+  NAME:
+    default: Kronos Local
+  MAX_STORE:
+    default: 2
+  MIN_BACKGROUND_DURATION:
+    default: 30
+  STORE_RELEASE_VERSION:
+    default: 1.0.0
+  UPDATE_API:
+    default: https://api.ionicjs.com
+  UPDATE_METHOD:
+    default: background
+
+platforms:
+  ios:
+    targets:
+      App:
+        buildNumber: $CI_BUILD_NUMBER
+        bundleId: $BUNDLE_ID
+        displayName: $NAME
+        plist:
+          - replace: true
+            file: App/GoogleService-Info.plist
+            entries:
+              - BUNDLE_ID: $BUNDLE_ID
+              - CLIENT_ID: $CLIENT_ID
+              - REVERSED_CLIENT_ID: $REVERSED_CLIENT_ID
+              - GOOGLE_APP_ID: $GOOGLE_APP_ID
+        version: $STORE_RELEASE_VERSION
+  android:
+    packageName: $BUNDLE_ID
+    versionName: $STORE_RELEASE_VERSION
+    versionCode: $CI_BUILD_NUMBER
+    xml:
+      - resFile: values/strings.xml
+        target: resources/string[@name="app_name"]
+        replace: |
+          <string name="app_name">$NAME</string>
+      - resFile: values/strings.xml
+        target: resources/string[@name="title_activity_main"]
+        replace: |
+          <string name="title_activity_main">$NAME</string>
+      - resFile: values/strings.xml
+        target: resources/string[@name="package_name"]
+        replace: |
+          <string name="package_name">$BUNDLE_ID</string>
+      - resFile: values/strings.xml
+        target: resources/string[@name="custom_url_scheme"]
+        replace: |
+          <string name="custom_url_scheme">$BUNDLE_ID</string>
+      - resFile: values/strings.xml
+        target: resources/string[@name="ionic_app_id"]
+        replace: |
+          <string name="ionic_app_id">$APP_ID</string>
+      - resFile: values/strings.xml
+        target: resources/string[@name="ionic_channel_name"]
+        replace: |
+          <string name="ionic_channel_name">$CHANNEL_NAME</string>
+      - resFile: values/strings.xml
+        target: resources/string[@name="ionic_update_method"]
+        replace: |
+          <string name="ionic_update_method">$UPDATE_METHOD</string>
+      - resFile: values/strings.xml
+        target: resources/string[@name="ionic_max_versions"]
+        replace: |
+          <string name="ionic_max_versions">$MAX_STORE</string>
+      - resFile: values/strings.xml
+        target: resources/string[@name="ionic_min_background_duration"]
+        replace: |
+          <string name="ionic_min_background_duration">$MIN_BACKGROUND_DURATION</string>
+      - resFile: values/strings.xml
+        target: resources/string[@name="ionic_update_api"]
+        replace: |
+          <string name="ionic_update_api">$UPDATE_API</string>
+
+
+977154241087-ufhjgs0qt3ss2uajrvtbggaobldhbjus.apps.googleusercontent.com
