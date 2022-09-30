@@ -1,24 +1,6 @@
 vars:
-  APP_ID:
-    default: 557a3710
-  BUNDLE_ID:
-    default: com.revolutionprep.kronos.local
   CI_BUILD_NUMBER:
     default: 1
-  CHANNEL_NAME:
-    default: Local
-  NAME:
-    default: Kronos Local
-  MAX_STORE:
-    default: 2
-  MIN_BACKGROUND_DURATION:
-    default: 30
-  STORE_RELEASE_VERSION:
-    default: 1.0.0
-  UPDATE_API:
-    default: https://api.ionicjs.com
-  UPDATE_METHOD:
-    default: background
 
 platforms:
   ios:
