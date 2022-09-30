@@ -27,7 +27,7 @@ platforms:
         buildNumber: $CI_BUILD_NUMBER
         plist:
           - replace: true
-            file: ios/GoogleService-Info.plist
+            file: GoogleService-Info.plist
             entries:
               - CLIENT_ID: $CLIENT_ID
               - REVERSED_CLIENT_ID: $REVERSED_CLIENT_ID
