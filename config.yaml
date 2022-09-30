@@ -29,7 +29,7 @@ platforms:
         displayName: $NAME
         plist:
           - replace: true
-            file: App/GoogleService-Info.plist
+            file: ios/GoogleService-Info.plist
             entries:
               - BUNDLE_ID: $BUNDLE_ID
               - CLIENT_ID: $CLIENT_ID
